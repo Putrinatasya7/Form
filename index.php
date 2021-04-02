@@ -1,3 +1,18 @@
+<?php
+  include 'function.php';
+
+  if (isset($_POST['submit'])) {
+      $email = mysqli_real_escape_string($conn, $_POST['email']);
+      $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+      mysqli_query($conn, "INSERT INTO masuk VALUES('','$email','$password')");
+
+      echo "<script>window.alert('anda berhasil di login')
+      window.location = 'form.php';</script>";
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
 
